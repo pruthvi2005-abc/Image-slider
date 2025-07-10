@@ -1,0 +1,117 @@
+/* Basic styling for the entire body of the page */
+body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  font-family: sans-serif; /* Set a generic sans-serif font */
+  
+  /* Background image settings */
+  background-image: url('images/background.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the background image covers the entire element */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Makes the background fixed while scrolling (optional) */
+
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  color: white; /* Set default text color to white for better contrast */
+}
+
+/* Container for the heading and the slider to manage their layout */
+.container {
+  text-align: center; /* Center the text content (like the heading) */
+  display: flex; /* Use flexbox to arrange items in a column */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally within the container */
+  width: 100%; /* Make the container take full width */
+  /* Optional: Add a subtle background to the container if text is hard to read over background image */
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  /* padding: 20px; */
+  /* border-radius: 10px; */
+}
+
+/* Styling for the main heading of the page */
+h1 {
+  margin-bottom: 20px; /* Add space below the heading */
+  font-size: 3em; /* Make the font size larger */
+  /* Optional: Add text shadow for better readability over a complex background image */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
+}
+
+/* Styling for the main slider container */
+.slider-container {
+  position: relative; /* Needed for positioning child elements (like buttons) absolutely */
+  width: 90%; /* Set width to 90% of its parent (container) */
+  max-width: 600px; /* Limit the maximum width for larger screens */
+  overflow: hidden; /* Hide anything that overflows the container (important for image transitions) */
+  border-radius: 10px; /* Rounded corners for the slider box */
+  box-shadow: 0 0 20px rgba(0,0,0,0.7); /* Add a shadow for depth */
+  padding-bottom: 50px; /* Add padding at the bottom for the slideshow button */
+  /* Semi-transparent background for the slider itself, to make it stand out from the main background image */
+  background-color: rgba(34, 34, 34, 0.85); 
+}
+
+/* Styling for the image element within the slider */
+#slider-image {
+  width: 100%; /* Make the image take full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure it behaves as a block element */
+  opacity: 0; /* Initially hide the image for fade-in effect */
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity changes */
+}
+
+/* Class added by JavaScript to make the image visible */
+#slider-image.show {
+  opacity: 1; /* Make the image fully opaque */
+}
+
+/* Styling for navigation buttons (previous/next) */
+.nav-btn {
+  position: absolute; /* Position buttons absolutely within the slider-container */
+  top: 50%; /* Position vertically in the middle */
+  transform: translateY(-50%); /* Adjust vertically to truly center */
+  background: rgba(255,255,255,0.3); /* Semi-transparent white background */
+  color: rgb(0, 0, 0); /* Black arrow color */
+  border: none; /* Remove default button border */
+  font-size: 30px; /* Large font size for arrows */
+  padding: 10px; /* Padding around the arrows */
+  cursor: pointer; /* Indicate it's clickable */
+  z-index: 1; /* Ensure buttons are above the image */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Specific styling for the previous button */
+#prev-btn {
+  left: 10px; /* Position 10px from the left edge */
+}
+
+/* Specific styling for the next button */
+#next-btn {
+  right: 10px; /* Position 10px from the right edge */
+}
+
+/* Hover effect for navigation buttons */
+.nav-btn:hover {
+  background: rgba(255,255,255,0.6); /* Make background more opaque on hover */
+}
+
+/* Styling for the slideshow toggle button */
+.slide-toggle-btn {
+  position: absolute; /* Position absolutely within the slider-container */
+  bottom: 10px; /* Position 10px from the bottom edge */
+  left: 50%; /* Position horizontally in the middle */
+  transform: translateX(-50%); /* Adjust horizontally to truly center */
+  background-color: #007BFF; /* Blue background color */
+  color: white; /* White text color */
+  border: none; /* Remove default button border */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Indicate it's clickable */
+  font-size: 16px; /* Font size of the button text */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for the slideshow toggle button */
+.slide-toggle-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
